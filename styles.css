@@ -1,0 +1,202 @@
+/* 页面整体背景 */
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #c2a878;
+    background-image: url('https://ts3.tc.mm.bing.net/th/id/OIP-C.7z_c6CzIVMOMjikFtDHqWgHaE7?rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+}
+
+/* 中间容器 */
+.container {
+    max-width: 1000px;
+    min-height: 600px;
+    margin: 0 auto;
+    background-color: rgba(225, 205, 170, 0.85);
+    padding: 40px 50px;
+    border-radius: 12px;
+    border: 1px solid rgba(210, 180, 140, 0.5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 标题样式 */
+h1 {
+    color: #4a260b;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* 按钮区域 */
+.btn-group {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 通用按钮样式 */
+button {
+    background-color: #7d3c11;
+    color: #fff8e7;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #632f0e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+    background-color: #a68a64;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 故事展示区 */
+.story {
+    min-height: 150px;
+    padding: 25px;
+    background-color: rgba(215, 195, 160, 0.9);
+    border: 1px solid rgba(210, 180, 140, 0.6);
+    border-radius: 10px;
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: #3d230a;
+    letter-spacing: 0.3px;
+}
+
+/* 答案输入容器样式 */
+.answer-container {
+    margin: 25px 0;
+    padding: 20px;
+    background-color: rgba(220, 200, 170, 0.9);
+    border-radius: 10px;
+    border: 1px solid rgba(210, 180, 140, 0.7);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.answer-container input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #d4b650;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #fff8e7;
+    color: #3d230a;
+}
+
+.answer-container input:focus {
+    outline: none;
+    border-color: #b8860b;
+    box-shadow: 0 0 8px rgba(184, 134, 11, 0.2);
+}
+
+/* 提交答案按钮特殊样式 */
+.answer-container #submitAnswerBtn {
+    background-color: #b8860b;
+    color: #231508;
+    margin: 0;
+}
+
+.answer-container #submitAnswerBtn:hover {
+    background-color: #e6c870;
+}
+
+/* 答题反馈文本样式 */
+.feedback {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.feedback.success {
+    color: #236b35;
+}
+
+.feedback.fail {
+    color: #802020;
+}
+
+/* 进度条容器 */
+.progress-container {
+    width: 100%;
+    height: 24px;
+    background-color: rgba(200, 180, 150, 0.7);
+    border-radius: 12px;
+    margin: 30px 0 20px;
+    overflow: hidden;
+}
+
+/* 进度条 - 慢节奏增长 */
+.progress-bar {
+    height: 100%;
+    background-image: linear-gradient(to right, #b89530, #d4b650);
+    width: 0%;
+    transition: width 1.5s ease;
+}
+
+/* 加载旋转动画 - 慢节奏旋转 */
+.fa-spinner {
+    font-size: 1.6em;
+    color: #7d3c11;
+    margin-right: 12px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 30px 20px;
+        min-height: 500px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 0 8px;
+    }
+    
+    .story {
+        font-size: 1.1em;
+    }
+    
+    /* 响应式：答案输入容器换行 */
+    .answer-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

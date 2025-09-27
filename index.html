@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘宝藏探险</title>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- 引入神秘风格字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>神秘宝藏探险</h1>
+        
+        <div class="btn-group">
+            <button id="startBtn">开始探险</button>
+            <button id="resetBtn" disabled>重新开始</button>
+        </div>
+        
+        <!-- 故事展示区 -->
+        <div class="story" id="storyBox">
+            点击“开始探险”，开启你的寻宝之旅！
+        </div>
+
+        <!-- 答案输入容器（默认隐藏） -->
+        <div class="answer-container" id="answerContainer" style="display: none;">
+            <input type="text" id="answerInput" placeholder="输入答案...">
+            <button id="submitAnswerBtn">提交</button>
+            <p class="feedback" id="answerFeedback"></p>
+        </div>
+
+        <!-- 进度条 -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
